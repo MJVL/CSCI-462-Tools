@@ -1,4 +1,5 @@
 # CSCI-462-Tools
+
 Collection of miscellaneous scripts written to help for CSCI-462 - RIT's cryptography course.
 
 Most of these scripts are built for convenience, not efficient run times/memory usage, hence the code style won't be pristine.
@@ -6,6 +7,7 @@ Most of these scripts are built for convenience, not efficient run times/memory 
 ## irreducible-polynomials
 
 ### Usage
+
 ```
 usage: irreducible-polynomials.py [-h] [-r] degree
 
@@ -18,6 +20,7 @@ optional arguments:
 ```
 
 ### Example
+
 ```
 python3 .\irreducible-polynomials.py 2 -r
 
