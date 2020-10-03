@@ -23,7 +23,7 @@ def polynomial_to_string(polynomial):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("degree", help="Degree to find irreducible polynomials up to", type=int)
+    parser.add_argument("degree", help="degree to find irreducible polynomials up to", type=int)
     parser.add_argument("-r", "--reducible", help="include reducible polynomials", action="store_true")
     args = parser.parse_args()
 
