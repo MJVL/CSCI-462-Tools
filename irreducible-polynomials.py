@@ -12,7 +12,7 @@ def polynomial_to_string(polynomial):
     for i, coefficent in enumerate(polynomial):
         if coefficent != 0:
             if coefficent > 1:
-                out += "%dx"
+                out += "%dx" % coefficent
             else:
                 out += "x" if (i < len(polynomial) - 1) else "1"
             if (len(polynomial) - i - 1 > 1): out += "^%d" % (len(polynomial) - i - 1)
@@ -22,7 +22,7 @@ def polynomial_to_string(polynomial):
 
 def main():
     degree = int(input("Enter degree: "))
-    zn = int(input("Enter Zn: "))
+    zn = 2 # locked until fixed for larger fields
     combinations = list(product(range(zn), repeat=degree + 1))[2:]
     print("All Possible Polynomials of Degree %d in Z%d" % (degree, zn))
     for polynomial in combinations:
