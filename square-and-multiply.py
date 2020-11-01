@@ -23,10 +23,11 @@ def square_and_multiply_table(base, power, modulus):
     next(iter_binary)
     result = base
     for i in iter_binary:
+        old_result = result
         result = result ** 2 * (1 if i == '0' else base) % modulus
         table.add_row([
             i, 
-            "{0}^2{1}".format(base, "" if i == '0' else " * {0}".format(base)), 
+            "{0}^2{1}".format(old_result, "" if i == '0' else " * {0}".format(base)), 
             "SQ{0}".format("" if i == '0' else " and Mult"), 
             result
         ])
