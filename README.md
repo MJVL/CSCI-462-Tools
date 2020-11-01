@@ -4,6 +4,30 @@ Collection of miscellaneous scripts written to help for CSCI-462 - RIT's cryptog
 
 Most of these scripts are built for convenience, not efficient run times/memory usage, hence the code style won't be pristine.
 
+## square-and-multiply
+
+### Usage
+
+```
+usage: square-and-multiply.py [-h] base exponent modulus
+
+positional arguments:
+  base        the base to convert to binary
+  exponent    the exponent
+  modulus     the modulus
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+### Example
+
+```
+python3 .\square-and-multiply.py 3 197 101
+
+3^197 mod 101 = 15
+```
+
 ## irreducible-polynomials
 
 ### Usage
