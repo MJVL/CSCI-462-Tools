@@ -47,5 +47,6 @@ def main():
     else:
         print(square_and_multiply_table(args.base, args.exponent, args.modulus))
 
+
 if __name__ == "__main__":
     main()
