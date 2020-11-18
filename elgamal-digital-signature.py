@@ -6,11 +6,11 @@ MMI = lambda A, n, s=1, t=0, N=0: (n < 2 and t % N or MMI(n, A % n, t, s - A // 
 
 
 def generate_signature(d, p, a, x, ke, show_steps):
-    r = pow(a, ke, p - 1)
+    r = pow(a, ke, p)
     s = ((x - d * r) * MMI(ke, p - 1)) % (p - 1)
     if show_steps:
         print(f"\nr = α^kE mod p - 1:\n\t{r} = {a}^{ke} mod {p - 1}")
-        print(f"\ns = (x - dr)kE^-1 mod p - 1:\n\t{s} = ({x} - ({d} * {r})){MMI(ke, p - 1)} mod {p - 1}\n")
+        print(f"\ns = (x - dr)kE^-1 mod p - 1:\n\t{s} = ({x} - ({d} * {r})) * {MMI(ke, p - 1)} mod {p - 1}\n")
     return r, s
 
 
