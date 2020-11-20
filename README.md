@@ -179,7 +179,7 @@ Valid Signature
 ```
 
 ```
-dsa.py 59 29 3 7 26 10 -s
+dsa 59 29 3 7 26 10 -s
 
 Choose d = 7
 Choose p = 59

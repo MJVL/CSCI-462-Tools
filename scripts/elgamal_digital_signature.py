@@ -38,6 +38,7 @@ def main():
     if args.show_steps:
         print(f"Choose d = {d}\nChoose p = {p}\nChoose α = {a}\n")
         print(f"β = α^d mod p:\n\t{b} = {a}^{d} mod {p}\n")
+    print(f"Private Key d = {d}\n")
     print(f"Public Key (p, α, β) = ({p}, {a}, {b})\n")
 
     x, ke = args.x, args.kE
