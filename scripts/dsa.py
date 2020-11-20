@@ -42,7 +42,7 @@ def main():
     p, q, a, d = args.p, args.q, args.α, args.d
     b = pow(a, d, p)
     if args.show_steps:
-        print(f"Choose d = {d}\n, Choose p = {p}\nChoose q = {q}\nChoose α = {a}\n")
+        print(f"Choose d = {d}\nChoose p = {p}\nChoose q = {q}\nChoose α = {a}\n")
         print(f"β = α^d mod p:\n\t{b} = {a}^{d} mod {p}\n")
     print(f"Public Key (p, q, α, β) = ({p}, {q}, {a}, {b})\n")
     

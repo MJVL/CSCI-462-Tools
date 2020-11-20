@@ -138,6 +138,84 @@ Verification (t, α^x) = (22, 22)
 Valid Signature
 ```
 
+## dsa
+
+### Usage
+
+```
+usage: dsa [-h] [-s] p q α d hx kE
+
+Walks through the Digital Signature Algorithm process and checks if the
+signature is valid.
+
+positional arguments:
+  p                 prime p
+  q                 divisor of p - 1
+  α                 element with ord(α) = q
+  d                 the private key with 0 < d < q
+  h(x)              the hash of the message x
+  kE                random ephemeral key with 0 < kE < q
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -s, --show_steps  show intermediate calculations and equations
+```
+
+### Examples
+
+```
+dsa 59 29 3 7 17 25
+
+Public Key (p, q, α, β) = (59, 29, 3, 4)
+
+DSA Signature (h(x), (r, s)) = (17, (22, 8))
+
+Verification (v, r % q) = (22, 22)
+
+Valid Signature
+```
+
+```
+dsa.py 59 29 3 7 26 10 -s
+
+Choose d = 7
+Choose p = 59
+Choose q = 29
+Choose α = 3
+
+β = α^d mod p:
+	4 = 3^7 mod 59
+
+Public Key (p, q, α, β) = (59, 29, 3, 4)
+
+Compute h(x) = 26
+Choose kE = 10
+
+r = (α^kE mod p) mod q
+	20 = (3^10 mod 59) mod 29
+
+s = (h(x) + dr)kE^-1 mod q
+	5 = (26 - (7 * 20)) * 3 mod 29
+
+DSA Signature (h(x), (r, s)) = (26, (20, 5))
+
+w = s^-1 mod q
+	6 = 5^-1 mod 29
+
+u1 = w * h(x) mod q
+	11 = 6 * 26 mod 29
+
+u2 = w * r mod q
+	4 = 6 * 20 mod 29
+
+v = (α^u1 * β^u2 mod p) mod q
+	20 = (3^11 * 4^4 mod 59) mod 29
+
+Verification (v, r % q) = (20, 20)
+
+Valid Signature
+```
+
 ## irreducible-polynomials
 
 ### Usage
