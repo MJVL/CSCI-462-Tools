@@ -4,6 +4,23 @@ Collection of miscellaneous scripts written to help for CSCI-462 - RIT's cryptog
 
 Most of these scripts are built for convenience, not efficient run times/memory usage, hence the code style won't be pristine.
 
+## Installation
+
+```
+pip3 install -r requirements.txt
+```
+
+## Script Glossary
+- [square-and-multiply](#square-and-multiply)
+  - [Usage](#usage)
+  - [Examples](#examples)
+- [elgamal-digital-signature](#elgamal-digital-signature)
+  - [Usage](#usage-1)
+  - [Examples](#examples-1)
+- [irreducible-polynomials](#irreducible-polynomials)
+  - [Usage](#usage-2)
+  - [Example](#example)
+
 ## square-and-multiply
 
 ### Usage
