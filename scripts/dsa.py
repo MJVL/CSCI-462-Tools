@@ -29,7 +29,7 @@ def verify_signature(p, q, a, b, hx, r, s, show_steps):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Walks through the Elgamal Digital Signature process and checks if the signature is valid.")
+    parser = argparse.ArgumentParser(description="Walks through the Digital Signature Algorithm process and checks if the signature is valid.")
     parser.add_argument("p", help="prime p", type=int)
     parser.add_argument("q", help="divisor of p - 1", type=int)
     parser.add_argument("α", help="element with ord(α) = q", type=int)
@@ -42,7 +42,7 @@ def main():
     p, q, a, d = args.p, args.q, args.α, args.d
     b = pow(a, d, p)
     if args.show_steps:
-        print(f"Choose d = {d}, Choose p = {p}\nChoose q = {q}\nChoose α = {a}\n")
+        print(f"Choose d = {d}\n, Choose p = {p}\nChoose q = {q}\nChoose α = {a}\n")
         print(f"β = α^d mod p:\n\t{b} = {a}^{d} mod {p}\n")
     print(f"Public Key (p, q, α, β) = ({p}, {q}, {a}, {b})\n")
     
