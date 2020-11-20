@@ -21,13 +21,15 @@ optional arguments:
   -s, --show-steps  show each step in the algorithm
 ```
 
-### Example
+### Examples
 
 ```
 python3 .\square-and-multiply.py 3 197 101
 
 3^197 mod 101 = 15
+```
 
+```
 python3 .\square-and-multiply.py 2 79 101 -s
 +-------------------------------------------------+
 |            Work for 2^79 mod 101 = 42           |
@@ -42,6 +44,77 @@ python3 .\square-and-multiply.py 2 79 101 -s
 |      1       | 98^2 * 2 | SQ and Mult |    18   |
 |      1       | 18^2 * 2 | SQ and Mult |    42   |
 +--------------+----------+-------------+---------+
+```
+
+## elgamal-digital-signature
+
+### Usage
+
+```
+usage: elgamal-digital-signature.py [-h] [-s] d p α x kE
+
+Walks through the Elgamal Digital Signature process and checks if the
+signature is valid.
+
+positional arguments:
+  d                 the private key, a random integer d ∈ {2, 3, ..., p - 2}
+  p                 large prime p
+  α                 primitive root α
+  x                 message
+  kE                random ephemeral key kE ∈ {0, 1, 2,.., p − 2} such that
+                    gcd(kE, p − 1) = 1
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -s, --show_steps  show intermediate calculations and equations
+```
+
+### Examples
+
+```
+python3 elgamal-digital-signature.py 67 97 23 85 77
+
+Public Key (p, α, β) = (97, 23, 15)
+
+Elgamal Signature (x, (r, s)) = (85, (84, 29))
+
+Verification (t, α^x) = (83, 83)
+
+Valid Signature
+```
+
+```
+python3 elgamal-digital-signature.py 12 29 2 26 5 -s
+
+Choose d = 12
+Choose p = 29
+Choose α = 2
+
+β = α^d mod p:
+	7 = 2^12 mod 29
+
+Public Key (p, α, β) = (29, 2, 7)
+
+Choose x = 26
+Choose kE = 5
+
+r = α^kE mod p - 1:
+	3 = 2^5 mod 28
+
+s = (x - dr)kE^-1 mod p - 1:
+	26 = (26 - (12 * 3)) * 17 mod 28
+
+Elgamal Signature (x, (r, s)) = (26, (3, 26))
+
+t = β^r * r^s mod p:
+	22 = 7^3 * 3^26 mod 29
+
+α^x mod p:
+	22 = 2^26 mod 29
+
+Verification (t, α^x) = (22, 22)
+
+Valid Signature
 ```
 
 ## irreducible-polynomials

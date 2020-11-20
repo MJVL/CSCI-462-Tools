@@ -30,7 +30,7 @@ def main():
     parser.add_argument("α", help="primitive root α", type=int)
     parser.add_argument("x", help="message", type=int)
     parser.add_argument("kE", help="random ephemeral key kE ∈ {0, 1, 2,.., p − 2} such that gcd(kE, p − 1) = 1", type=int)
-    parser.add_argument("-s", "--show_steps", help="show intermediate calculations", action="store_true")
+    parser.add_argument("-s", "--show_steps", help="show intermediate calculations and equations", action="store_true")
     args = parser.parse_args()
 
     d, a, p = args.d, args.α, args.p
