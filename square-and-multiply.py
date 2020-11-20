@@ -35,7 +35,7 @@ def square_and_multiply_table(base, power, modulus):
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Implementation of the square-and-multiply algorithm, a fast method of modular exponentiation.")
     parser.add_argument("base", help="the base to convert to binary", type=int)
     parser.add_argument("exponent", help="the exponent", type=int)
     parser.add_argument("modulus", help="the modulus", type=int)

@@ -11,6 +11,9 @@ Most of these scripts are built for convenience, not efficient run times/memory 
 ```
 usage: square-and-multiply.py [-h] [-s] base exponent modulus
 
+Implementation of the square-and-multiply algorithm, a fast method of modular
+exponentiation.
+
 positional arguments:
   base              the base to convert to binary
   exponent          the exponent
@@ -124,8 +127,11 @@ Valid Signature
 ```
 usage: irreducible-polynomials.py [-h] [-r] degree
 
+Finds all irreducible (and optionally reducible) polynomials up to a specified
+degree in Z2.
+
 positional arguments:
-  degree           Degree to find irreducible polynomials up to
+  degree           degree to find irreducible polynomials up to
 
 optional arguments:
   -h, --help       show this help message and exit
