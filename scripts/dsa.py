@@ -25,7 +25,7 @@ def verify_signature(p, q, a, b, hx, r, s, show_steps):
         print(f"\nu2 = w * r mod q\n\t{u2} = {w} * {r} mod {q}")
         print(f"\nv = (α^u1 * β^u2 mod p) mod q\n\t{v} = ({a}^{u1} * {b}^{u2} mod {p}) mod {q}")
     print(f"\nVerification (v, r % q) = ({v}, {ver})\n")
-    return True
+    return v == ver
 
 
 def main():
@@ -55,7 +55,6 @@ def main():
     print(f"DSA Signature (h(x), (r, s)) = ({hx}, ({r}, {s}))")
 
     print("Valid Signature" if verify_signature(p, q, a, b, hx, r, s, args.show_steps) else "Invalid Signature")
-
 
 
 if __name__ == "__main__":
