@@ -7,7 +7,7 @@ Most of these scripts are built for convenience, not efficient run times/memory 
 ## Installation
 
 ```
-pip3 install -r requirements.txt
+sudo python3 setup.py install
 ```
 
 ## Script Glossary
@@ -26,7 +26,7 @@ pip3 install -r requirements.txt
 ### Usage
 
 ```
-usage: square-and-multiply.py [-h] [-s] base exponent modulus
+usage: square-and-multiply [-h] [-s] base exponent modulus
 
 Implementation of the square-and-multiply algorithm, a fast method of modular
 exponentiation.
@@ -44,13 +44,14 @@ optional arguments:
 ### Examples
 
 ```
-python3 .\square-and-multiply.py 3 197 101
+square-and-multiply 3 197 101
 
 3^197 mod 101 = 15
 ```
 
 ```
-python3 .\square-and-multiply.py 2 79 101 -s
+square-and-multiply 2 79 101 -s
+
 +-------------------------------------------------+
 |            Work for 2^79 mod 101 = 42           |
 +--------------+----------+-------------+---------+
@@ -71,7 +72,7 @@ python3 .\square-and-multiply.py 2 79 101 -s
 ### Usage
 
 ```
-usage: elgamal-digital-signature.py [-h] [-s] d p α x kE
+usage: elgamal-digital-signature [-h] [-s] d p α x kE
 
 Walks through the Elgamal Digital Signature process and checks if the
 signature is valid.
@@ -92,7 +93,7 @@ optional arguments:
 ### Examples
 
 ```
-python3 elgamal-digital-signature.py 67 97 23 85 77
+elgamal-digital-signature 67 97 23 85 77
 
 Public Key (p, α, β) = (97, 23, 15)
 
@@ -104,7 +105,7 @@ Valid Signature
 ```
 
 ```
-python3 elgamal-digital-signature.py 12 29 2 26 5 -s
+elgamal-digital-signature 12 29 2 26 5 -s
 
 Choose d = 12
 Choose p = 29
@@ -142,7 +143,7 @@ Valid Signature
 ### Usage
 
 ```
-usage: irreducible-polynomials.py [-h] [-r] degree
+usage: irreducible-polynomials [-h] [-r] degree
 
 Finds all irreducible (and optionally reducible) polynomials up to a specified
 degree in Z2.
@@ -158,7 +159,7 @@ optional arguments:
 ### Example
 
 ```
-python3 .\irreducible-polynomials.py 2 -r
+irreducible-polynomials 2 -r
 
 Polynomials up to Degree 2 in Z2
 ---------------------
