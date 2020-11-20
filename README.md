@@ -17,8 +17,11 @@ sudo python3 setup.py install
 - [elgamal-digital-signature](#elgamal-digital-signature)
   - [Usage](#usage-1)
   - [Examples](#examples-1)
-- [irreducible-polynomials](#irreducible-polynomials)
+- [dsa](#dsa)
   - [Usage](#usage-2)
+  - [Examples](#examples-2)
+- [irreducible-polynomials](#irreducible-polynomials)
+  - [Usage](#usage-3)
   - [Example](#example)
 
 ## square-and-multiply
