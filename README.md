@@ -237,7 +237,7 @@ Public Key (p, q, α, β) = (59, 29, 3, 4)
 
 DSA Signature (h(x), (r, s)) = (17, (22, 8))
 
-Verification (v, r % q) = (22, 22)
+Verification (v, r mod q) = (22, 22)
 
 Valid Signature
 ```
@@ -278,7 +278,7 @@ u2 = w * r mod q
 v = (α^u1 * β^u2 mod p) mod q
 	20 = (3^11 * 4^4 mod 59) mod 29
 
-Verification (v, r % q) = (20, 20)
+Verification (v, r mod q) = (20, 20)
 
 Valid Signature
 ```
