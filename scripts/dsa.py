@@ -24,7 +24,7 @@ def verify_signature(p, q, a, b, hx, r, s, show_steps):
         print(f"\nu1 = w * h(x) mod q\n\t{u1} = {w} * {hx} mod {q}")
         print(f"\nu2 = w * r mod q\n\t{u2} = {w} * {r} mod {q}")
         print(f"\nv = (α^u1 * β^u2 mod p) mod q\n\t{v} = ({a}^{u1} * {b}^{u2} mod {p}) mod {q}")
-    print(f"\nVerification (v, r % q) = ({v}, {ver})\n")
+    print(f"\nVerification (v, r mod q) = ({v}, {ver})\n")
     return v == ver
 
 
