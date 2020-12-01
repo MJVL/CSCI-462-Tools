@@ -4,7 +4,7 @@ import argparse
 def main():
     parser = argparse.ArgumentParser(description="Walks through the Diffie-Hellman Key Exchange setup process.")
     parser.add_argument("p", help="large prime p", type=int)
-    parser.add_argument("α", help="integer α ∈ {2, 3, ..., p - 2", type=int)
+    parser.add_argument("α", help="integer α ∈ {2, 3, ..., p - 2}", type=int)
     parser.add_argument("sec_a", help="secret integer exponent a", type=int)
     parser.add_argument("sec_b", help="secret integer exponent b", type=int)
     parser.add_argument("-s", "--show_steps", help="show intermediate calculations and equations", action="store_true")

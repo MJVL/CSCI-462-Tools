@@ -13,6 +13,7 @@ setup(
     entry_points = {
         "console_scripts": [
             "square-and-multiply=scripts.square_and_multiply:main",
+            "dhke=scripts.dhke:main",
             "elgamal-digital-signature=scripts.elgamal_digital_signature:main",
             "dsa=scripts.dsa:main",
             "irreducible-polynomials=scripts.irreducible_polynomials:main"
