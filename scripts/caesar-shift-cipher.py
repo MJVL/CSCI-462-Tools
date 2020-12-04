@@ -12,10 +12,10 @@ def main():
     if not args.key:
         table = PrettyTable()
         table.field_names = ["Shift", "Text"]
-        [table.add_row([i, ''.join(chr((ord(c) + i - ascii_start) % 26 + ascii_start) for c in args.text)]) for i in range(26)]
+        [table.add_row([i, ''.join(' ' if ord(c) == 32 else chr((ord(c) + i - ascii_start) % 26 + ascii_start) for c in args.text)]) for i in range(26)]
         print(table)
     else:
-        print(f"Shifted: {''.join(chr((ord(c) + args.key - ascii_start) % 26 + ascii_start) for c in args.text)}")
+        print(f"Shifted: {''.join(' ' if ord(c) == 32 else chr((ord(c) + args.key - ascii_start) % 26 + ascii_start) for c in args.text)}")
 
 
 if __name__ == "__main__":
