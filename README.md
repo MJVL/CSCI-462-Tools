@@ -15,7 +15,7 @@ sudo python3 setup.py install
   - [Usage](#usage)
   - [Examples](#examples)
 - [dhke](#dhke)
-    - [Usage](#usage-1)
+  - [Usage](#usage-1)
   - [Examples](#examples-1) 
 - [elgamal-digital-signature](#elgamal-digital-signature)
   - [Usage](#usage-2)
@@ -23,8 +23,11 @@ sudo python3 setup.py install
 - [dsa](#dsa)
   - [Usage](#usage-3)
   - [Examples](#examples-3)
-- [irreducible-polynomials](#irreducible-polynomials)
+- [caesar-shift-cipher](#caesar-shift-cipher)
   - [Usage](#usage-4)
+  - [Examples](#examples-4)
+- [irreducible-polynomials](#irreducible-polynomials)
+  - [Usage](#usage-5)
   - [Example](#example)
 
 ## square-and-multiply
@@ -276,11 +279,73 @@ u2 = w * r mod q
 	4 = 6 * 20 mod 29
 
 v = (α^u1 * β^u2 mod p) mod q
-	20 = (3^11 * 4^4 mod 59) mod 29
+	20 = (3^11 * 4^4 mod 59) mod 29`
 
 Verification (v, r mod q) = (20, 20)
 
 Valid Signature
+```
+
+## caesar-shift-cipher
+
+### Usage
+
+```
+usage: caesar-shift-cipher [-h] [-k KEY] text
+
+Implements basic ASCII encryption/decryption through a Ceasar cipher, as well
+as brute forcing.
+
+positional arguments:
+  text               the plaintext or ciphertext to encrypt or decrypt
+                     respectively
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -k KEY, --key KEY  the shift (if known, no value = brute force)
+```
+
+### Examples
+
+```
+caesar-shift-cipher xultpaajcxitltlxaarpjhtiwtgxktghidhipxciwtvgtpilpitghlxiwiwtxgqadds -k 11
+
+Shifted: ifweallunitewewillcausetheriverstostainthegreatwaterswiththeirblood
+```
+
+```
+caesar-shift-cipher "freq analysis"
+
++-------+---------------+
+| Shift |      Text     |
++-------+---------------+
+|   0   | freq analysis |
+|   1   | gsfr bobmztjt |
+|   2   | htgs cpcnauku |
+|   3   | iuht dqdobvlv |
+|   4   | jviu erepcwmw |
+|   5   | kwjv fsfqdxnx |
+|   6   | lxkw gtgreyoy |
+|   7   | mylx huhsfzpz |
+|   8   | nzmy ivitgaqa |
+|   9   | oanz jwjuhbrb |
+|   10  | pboa kxkvicsc |
+|   11  | qcpb lylwjdtd |
+|   12  | rdqc mzmxkeue |
+|   13  | serd nanylfvf |
+|   14  | tfse obozmgwg |
+|   15  | ugtf pcpanhxh |
+|   16  | vhug qdqboiyi |
+|   17  | wivh rercpjzj |
+|   18  | xjwi sfsdqkak |
+|   19  | ykxj tgterlbl |
+|   20  | zlyk uhufsmcm |
+|   21  | amzl vivgtndn |
+|   22  | bnam wjwhuoeo |
+|   23  | cobn xkxivpfp |
+|   24  | dpco ylyjwqgq |
+|   25  | eqdp zmzkxrhr |
++-------+---------------+
 ```
 
 ## irreducible-polynomials

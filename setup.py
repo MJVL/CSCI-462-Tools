@@ -16,6 +16,7 @@ setup(
             "dhke=scripts.dhke:main",
             "elgamal-digital-signature=scripts.elgamal_digital_signature:main",
             "dsa=scripts.dsa:main",
+            "caesar-shift-cipher=caesar-shift-cipher:main",
             "irreducible-polynomials=scripts.irreducible_polynomials:main"
         ]
     }
